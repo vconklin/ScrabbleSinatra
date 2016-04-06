@@ -1,9 +1,16 @@
-<div class="params">
-  <%= params %>
-</div>
+<aside>
+  <img alt="A pile of random Scrabble tiles" src="/images/score.jpeg">
+</aside>
 
-<form action="" method="post" accept-charset="utf-8">
-  <label for="word">Word</label>
-  <input type="text" name="given_word" value="" id="word">
-  <input type="submit" value="Submit">
-</form>
+<article>
+  <h2>Calculate your score!</h2>
+  <div class="params">
+    <%= params %>
+  </div>
+
+  <form action="" method="post" accept-charset="utf-8">
+    <label for="word">Word</label>
+    <input type="text" name="given_word" value="" id="word">
+    <input type="submit" value="Submit">
+  </form>
+</article>
