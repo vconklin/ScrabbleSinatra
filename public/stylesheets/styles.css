@@ -1,3 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+
 body {
-  background-color: lightgray;
+  font-size: 16px;
+  background-color: beige;
+}
+
+h1 {
+  /*so that it doesn't have a line-break before and after it, so topnav positions itself above it in the top right*/
+  display: inline-block;
+}
+
+.topnav {
+  float: right;
+}
+
+main {
+  margin: 3rem auto;
+  padding: 0 0 0 0;
+  width: 65%;
+}
+
+main img {
+  margin: 0 0 0 0;
+  width: 49%;
+  border-radius: 5%;
+}
+
+main article {
+  display: inline-block;
+  margin: 0 0 0 0;
+  /* float: left; */
+  /* height: 100%; */
+  width: 49%;
+  text-align: justify;
+  padding: 1rem 1rem 0 1rem;
+  vertical-align: top;
+}
+
+footer {
+  clear: both;
+  margin: 2rem auto;
+  width: 30%;
+  text-align: center;
 }
