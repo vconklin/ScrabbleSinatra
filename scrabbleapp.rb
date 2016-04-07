@@ -8,11 +8,13 @@ class ScrabbleApp < Sinatra::Base
   end
 
   get '/score' do
+    @my_score = 0
     erb :score
   end
 
   post '/score' do
-    @my_score = Score.new(params["given_word"])
+    # @my_score = Score.new(params["given_word"])
+    @my_score = Score.score(params["given_word"])
     erb :score
   end
 

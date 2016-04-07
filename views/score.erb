@@ -2,14 +2,21 @@
 
 <article>
   <!-- make this a legend for a fieldset -->
-  <h2>Calculate your score!</h2>
+  <h2>Score Calculator</h2>
   <div class="params">
     <%= params %>
   </div>
 
-  <form action="" method="post" accept-charset="utf-8">
-    <label for="word">Word</label>
-    <input type="text" name="given_word" value="" id="word">
-    <input type="submit" value="Submit">
-  </form>
+  <!-- so that it won't show '0' on the first page load -->
+  <p>Your score is <span class="your-score"><%= @my_score if @my_score != 0%></span>!</p>
+
+  <fieldset>
+    <legend>Calculate your score!</legend>
+    <form action="" method="post" accept-charset="utf-8">
+      <label for="word">Word</label>
+      <input type="text" name="given_word" value="" id="word">
+      <input type="submit" value="Submit">
+    </form>
+  </fieldset>
+
 </article>

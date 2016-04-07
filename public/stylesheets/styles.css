@@ -46,3 +46,8 @@ footer {
   width: 30%;
   text-align: center;
 }
+
+.your-score {
+  font-size: 2rem;
+  color: blue;
+}
