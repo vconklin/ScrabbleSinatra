@@ -34,4 +34,22 @@ class Score
   score
 end
 
+def self.score_many(multiple_word_string)
+## for many words, the user writes their words in a textarea, and give them instructions to separate the words with a space
+  multiple_words = multiple_word_string.upcase.split(" ")
+  split_into_letters = multiple_words.map do |word|
+    word.split("")
+  end
+
+  ## This can all probably be refactored to work with a string instead of always converting the individual words to arrays. DO THIS SOON.
+  split_into_letters.each do |letter|
+    LETTER_POINTS.each do |points, letters_array|
+      if letters_array.include? letter
+        score += points
+        tiles += 1
+      end
+    end
+  end
+end
+
 end
