@@ -18,13 +18,18 @@ class ScrabbleApp < Sinatra::Base
     erb :score
   end
 
+  get '/score/:word' do
+    @my_score = Score.score(params[:word])
+    erb :score
+  end
+
   get '/score-many' do
-    @my_score = 0
+    @my_score_pairs = nil
     erb :score_many
   end
 
   post '/score-many' do
-    @my_score = Score.score_many(params["given_words"])
+    @my_score_pairs = Score.score_many(params["given_words"])
     erb :score_many
   end
 

@@ -2,14 +2,15 @@
 
 <article>
   <!-- make this a legend for a fieldset -->
-  <h2>Multiple-Word Score Calculator</h2>
-  <div class="params">
-    <%= params %>
-  </div>
+  <h2>Multiple-Words Score</h2>
 
   <!-- so that it won't show '0' on the first page load -->
-  <% unless @my_score == 0%>
-    <p>Your score is <span class="your-score"><%= @my_score %></span>!</p>
+  <% unless @my_score_pairs == nil%>
+    <ul>
+    <% @my_score_pairs.each do |word, score| %>
+      <li><%= word %> : <span class="your-score"><%= score %></span></li>
+    <% end %>
+    </ul>
   <% end %>
 
   <fieldset>
@@ -21,4 +22,6 @@
       <input type="submit" value="Submit">
     </form>
   </fieldset>
+
+  <p class="instructions"><a href="/score">&laquo; Single Word Score</a></p>
 </article>

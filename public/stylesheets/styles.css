@@ -5,16 +5,46 @@
 
 body {
   font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
   background-color: beige;
+  color: #333333;
+}
+
+header {
+  background-color: #333333;
+  padding: 1.5rem;
+}
+
+header a {
+  color: beige;
+}
+
+header a:hover {
+  color: #dddd88;
+}
+
+header a:visited {
+  color: #c6c639;
+}
+
+.topnav {
+  float: right;
+  font-size: 2rem;
+}
+
+.topnav a {
+  padding: 1rem;
 }
 
 h1 {
   /*so that it doesn't have a line-break before and after it, so topnav positions itself above it in the top right*/
   display: inline-block;
+  font-size: 5rem;
+  color: white;
 }
 
-.topnav {
-  float: right;
+h2 {
+  font-size: 2rem;
 }
 
 main {
@@ -55,4 +85,8 @@ footer {
 .instructions {
   font-size: 1.25rem;
   font-weight: bold;
+}
+
+.instructions a {
+  text-decoration: none;
 }

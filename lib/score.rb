@@ -37,20 +37,20 @@ class Score
   end
 
   def self.score_many(multiple_word_string)
-  ## for many words, the user writes their words in a textarea, and give them instructions to separate the words with a space
-    multiple_words = multiple_word_string.upcase.split(" ")
-    # what is this? why is this variable never used?
-    split_into_letters = multiple_words.map do |word|
-      word.split("")
-    end
+  ## for many words, the user writes their words in a textarea. They are given instructions to separate the words with a space.
 
-    multiple_words = multiple_word_string.split(" ")
-    word_scores = multiple_words.map do |word|
-      self.score(word)
-    end
-    word_scores.reduce(0,:+)
+  # creates an array of words matching the pattern
+  all_words = multiple_word_string.upcase.scan(/[A-Z]+/)
 
-    # Jeremy wants me to show the individual score for each word AND the sum on the page.
+  # creates an array of scores for each word
+  all_scores = all_words.map do |word|
+    self.score(word)
+  end
+
+  # will make it look like [["aa", 2], ["dog", 5], ["moo", 5]]
+  scoring_pairs = all_words.zip(all_scores)
+
+  # this whole method should return an array of arrays I think
   end
 
 end
